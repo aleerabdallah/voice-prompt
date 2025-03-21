@@ -1,26 +1,13 @@
 import flet as ft
 
 
-def main(page: ft.Page):
-    counter = ft.Text("0", size=50, data=0)
+async def main(page: ft.Page):
+    page.adaptive = True
+    page.horizontal_alignment = ft.CrossAxisAlignment.STRETCH
+    page.theme_mode = ft.ThemeMode.LIGHT
+    page.title = "ChatBot"
 
-    def increment_click(e):
-        counter.data += 1
-        counter.value = str(counter.data)
-        counter.update()
-
-    page.floating_action_button = ft.FloatingActionButton(
-        icon=ft.Icons.ADD, on_click=increment_click
-    )
-    page.add(
-        ft.SafeArea(
-            ft.Container(
-                counter,
-                alignment=ft.alignment.center,
-            ),
-            expand=True,
-        )
-    )
+    chat = ft.ListView(auto_scroll=True, expand=True)
 
 
 ft.app(main)
