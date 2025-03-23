@@ -86,7 +86,7 @@ async def main(page: ft.Page):
                 text.value += part["message"]["content"]
                 text.update()
 
-        await get_response()
+        await get_response(new_message.value)
 
     send_prompt_btn = ft.IconButton(
         icon=ft.Icons.ARROW_UPWARD,
