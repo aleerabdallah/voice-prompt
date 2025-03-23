@@ -1,5 +1,5 @@
 [project]
-name = "voice-prompt"
+name = "VoicePompt"
 version = "0.1.0"
 description = ""
 readme = "README.md"
@@ -8,7 +8,8 @@ authors = [
     { name = "Flet developer", email = "you@example.com" }
 ]
 dependencies = [
-  "flet==0.27.6"
+  "flet==0.27.6",
+  "ollama>=0.4.7",
 ]
 
 [tool.flet]
@@ -32,6 +33,7 @@ path = "src"
 [tool.uv]
 dev-dependencies = [
     "flet[all]==0.27.6",
+    "ollama>=0.4.7",
 ]
 
 [tool.poetry]
